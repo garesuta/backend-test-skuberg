@@ -58,5 +58,6 @@ _GET_ /orders/{id} > Get a transaction
 - feature token เพื่อ authenticate สิทธิ์การใช้งานฟังก์ชันต่างๆของผู้ใช้
 - ระบบ verify ตัวตนจาก email หรือ sms เพื่อใช้ในการ verify user
 - dynamics pricing ของ คู่เหรียญ และฟังชันก์ calculate exchange เนื่องจากผมคิดว่าต้องมีระบบนี้และมี logic ค่อนข้างซับซ้อน จึงขอข้ามครับ อาจจะเพิ่มได้ด้วยการใช้ third parties API ร่วมด้วย
+- ระบบ migration database ผมยังไม่เคยทำกับ nodejs เคยทำแต่กับ go เลยจะยังไม่มี feature นี้ครับ
 
 ขอบคุณครับ
