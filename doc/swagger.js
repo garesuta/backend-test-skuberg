@@ -11,7 +11,8 @@ const swaggerOptions = {
         },
         servers: [
             {
-                url: `http://localhost:${process.env.PORT}`, // Replace with your server URL
+                // url: `http://localhost:${process.env.PORT}`, // Replace with your server URL
+                url: `${process.env.DEPLOY_URL}`, // Replace with your server URL
             },
         ],
     },
