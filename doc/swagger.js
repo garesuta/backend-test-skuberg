@@ -1,4 +1,5 @@
 require('dotenv').config()
+const { ur } = require('@faker-js/faker');
 const swaggerJsDoc = require('swagger-jsdoc');
 
 const swaggerOptions = {
@@ -12,7 +13,8 @@ const swaggerOptions = {
         servers: [
             {
                 // url: `http://localhost:${process.env.PORT}`, // Replace with your server URL
-                url: `${process.env.DEPLOY_URL}`, // Replace with your server URL
+                // url: `${process.env.DEPLOY_URL}`, // Replace with your server URL
+                url: `https://backend-test-skuberg-production.up.railway.app`, // Replace with your server URL
             },
         ],
     },
