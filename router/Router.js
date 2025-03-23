@@ -181,7 +181,7 @@ Router.route('/orders').post(exchangeService.createOrder);
 // Get transaction
 /**
  * @swagger
- * /orders/{id}:
+ * /api/v1/orders/{id}:
  *   get:
  *     tags:
  *       - Orders
