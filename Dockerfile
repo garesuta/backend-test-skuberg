@@ -10,6 +10,8 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install --omit=dev
 
+# update environment variables
+RUN source .env
 # Copy the rest of the application code to the working directory
 COPY . .
 
