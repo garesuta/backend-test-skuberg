@@ -23,7 +23,8 @@ exports.createWallet = async (req, res, next) => {
 
 exports.updateWallet = async (req, res, next) => {
     try {
-        let wallet_id = req.params.id;
+        let wallet_id = req.query.id;
+        // console.log(wallet_id);
         let body = req.body;
         const queryText = `UPDATE public."Wallet"
             SET user_id=$1, crypto_id=$2, balance=$3

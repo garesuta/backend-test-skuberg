@@ -1,5 +1,7 @@
 const pool = require('../db/pool')
-const errors = require('../utils/errors');
+const errors = require('../utils/errors')
+const { validate } = require('uuid')
+
 
 exports.createOrder = async (req, res, next) => {
     try {
@@ -24,7 +26,10 @@ exports.createOrder = async (req, res, next) => {
 
 exports.getTransactionByOrder = async (req, res, next) => {
     try {
-        let orderId = req.params.id;
+        let orderId = req.params.id
+        if (!validate(orderId)) {
+            return res.status(400).json({ status: "failed", data: "Invalid order_id" });
+        }
         let sql = `SELECT * FROM public."Transaction" WHERE order_id = $1`;
         let response = await pool.query(sql, [orderId]);
         if (response.rowCount > 0) {
@@ -33,10 +38,10 @@ exports.getTransactionByOrder = async (req, res, next) => {
                 data: response.rows[0]
             });
         } else {
-            return res.status(404).json({ status: "failed", data: "Transaction not found" });
+            return res.status(404).json({ status: "failed", data: "Transaction not found" })
         }
     } catch (error) {
-        console.log(error.message);
-        errors.MapError(500, "Internal server error", next);
+        console.log(error.message)
+        errors.MapError(500, "Internal server error", next)
     }
 }
